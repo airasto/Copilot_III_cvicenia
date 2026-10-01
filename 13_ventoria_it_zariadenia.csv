@@ -1,0 +1,125 @@
+﻿Inventárne číslo;Typ zariadenia;Výrobca;Model;Používateľ;Oddelenie;Dátum nákupu;Koniec záruky;Stav
+VEN-IT-0001;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;;;10.03.2026;10.03.2029;Na sklade
+VEN-IT-0002;Monitor;Dell;P2723;Simona Kubišová;Obchod;25.11.2025;25.11.2028;V používaní
+VEN-IT-0003;Notebook;Dell;Latitude 5440;Simona Kubišová;Obchod;04.02.2025;04.02.2028;V používaní
+VEN-IT-0004;Notebook;Dell;Latitude 5440;Branislav Kollár;Montáž a servis;28.12.2024;28.12.2027;V používaní
+VEN-IT-0005;Notebook;Dell;Latitude 5440;Zuzana Lipková;Financie;16.11.2024;16.11.2027;V oprave
+VEN-IT-0006;Monitor;Dell;P2723;Samuel Hraško;Montáž a servis;19.08.2024;19.08.2027;V používaní
+VEN-IT-0007;Notebook;Dell;Latitude 5440;Rastislav Bednár;Obchod;30.01.2024;30.01.2027;V používaní
+VEN-IT-0008;Notebook;Lenovo;ThinkPad T14;Simona Kubišová;Obchod;27.02.2026;27.02.2029;V používaní
+VEN-IT-0009;Notebook;Dell;Latitude 5440;Monika Ferencová;Montáž a servis;01.04.2025;01.04.2028;V používaní
+VEN-IT-0010;Notebook;Dell;Latitude 5440;Rastislav Bednár;Obchod;07.11.2023;07.11.2026;V používaní
+VEN-IT-0011;Mobil;Samsung;Galaxy A55;Simona Kubišová;Obchod;19.10.2024;19.10.2026;V používaní
+VEN-IT-0012;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Eva Hrušková;Financie;12.06.2023;12.06.2026;V používaní
+VEN-IT-0013;Monitor;Dell;P2723;Samuel Hraško;Montáž a servis;07.08.2025;07.08.2028;V používaní
+VEN-IT-0014;Monitor;Dell;P2723;Samuel Hraško;Montáž a servis;17.06.2026;17.06.2029;V používaní
+VEN-IT-0015;Notebook;Lenovo;ThinkPad T14;Lukáš Pavlík;Montáž a servis;27.09.2024;27.09.2027;V používaní
+VEN-IT-0016;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Andrea Mináriková;Montáž a servis;01.05.2022;01.05.2025;V používaní
+VEN-IT-0017;Tablet;Samsung;Galaxy Tab S9;Peter Baláž;IT;30.09.2025;30.09.2027;V používaní
+VEN-IT-0018;Notebook;Lenovo;ThinkPad T14;Tomáš Šimko;Obchod;15.07.2025;15.07.2028;V používaní
+VEN-IT-0019;Mobil;Apple;iPhone 15;Lucia Kováčová;HR;24.03.2023;24.03.2025;V používaní
+VEN-IT-0020;Monitor;Dell;P2723;Dávid Koreň;Montáž a servis;30.07.2025;30.07.2028;V používaní
+VEN-IT-0021;Mobil;Samsung;Galaxy A55;Marek Holub;Vedenie;12.09.2025;12.09.2027;V používaní
+VEN-IT-0022;Notebook;Lenovo;ThinkPad T14;Lukáš Pavlík;Montáž a servis;22.04.2024;22.04.2027;V používaní
+VEN-IT-0023;Monitor;Dell;P2723;;;02.01.2025;02.01.2028;Na sklade
+VEN-IT-0024;Notebook;Lenovo;ThinkPad T14;Veronika Kmeťová;Montáž a servis;12.10.2025;12.10.2028;V používaní
+VEN-IT-0025;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;;;08.08.2022;08.08.2025;Vyradené
+VEN-IT-0026;Monitor;Dell;P2723;Simona Kubišová;Obchod;29.01.2023;29.01.2026;V používaní
+VEN-IT-0027;Notebook;Dell;Latitude 5440;Zuzana Lipková;Financie;02.07.2023;02.07.2026;V používaní
+VEN-IT-0028;Notebook;Lenovo;ThinkPad T14;Juraj Holec;Montáž a servis;29.07.2024;29.07.2027;V používaní
+VEN-IT-0029;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Simona Kubišová;Obchod;07.09.2023;07.09.2026;V používaní
+VEN-IT-0030;Tablet;Samsung;Galaxy Tab S9;Andrea Mináriková;Montáž a servis;23.08.2025;23.08.2027;V používaní
+VEN-IT-0031;Notebook;Lenovo;ThinkPad T14;Juraj Holec;Montáž a servis;12.02.2024;12.02.2027;V používaní
+VEN-IT-0032;Notebook;Lenovo;ThinkPad T14;Lucia Kováčová;HR;10.12.2025;10.12.2028;V používaní
+VEN-IT-0033;Monitor;Dell;P2723;Ondrej Vrábel;Montáž a servis;13.08.2025;13.08.2028;V používaní
+VEN-IT-0034;Mobil;Samsung;Galaxy A55;;;17.12.2024;17.12.2026;Vyradené
+VEN-IT-0035;Notebook;Dell;Latitude 5440;Veronika Kmeťová;Montáž a servis;06.03.2025;06.03.2028;V používaní
+VEN-IT-0036;Notebook;Lenovo;ThinkPad T14;;;02.11.2025;02.11.2028;Vyradené
+VEN-IT-0037;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Monika Ferencová;Montáž a servis;09.09.2025;09.09.2028;V používaní
+VEN-IT-0038;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;;;02.02.2022;02.02.2025;Na sklade
+VEN-IT-0039;Mobil;Samsung;Galaxy A55;Natália Jurčová;Montáž a servis;30.12.2025;30.12.2027;V používaní
+VEN-IT-0040;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Filip Danko;Projekty;29.11.2022;29.11.2025;V používaní
+VEN-IT-0041;Mobil;Samsung;Galaxy A55;;;18.10.2025;18.10.2027;Vyradené
+VEN-IT-0042;Notebook;Dell;Latitude 5440;Natália Jurčová;Montáž a servis;23.02.2026;23.02.2029;V používaní
+VEN-IT-0043;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Samuel Hraško;Montáž a servis;10.06.2022;10.06.2025;V používaní
+VEN-IT-0044;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Ivana Pšenková;HR;20.07.2022;20.07.2025;V používaní
+VEN-IT-0045;Tablet;Samsung;Galaxy Tab S9;Eva Hrušková;Financie;24.05.2025;24.05.2027;V používaní
+VEN-IT-0046;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Juraj Holec;Montáž a servis;04.05.2026;04.05.2029;V používaní
+VEN-IT-0047;Mobil;Samsung;Galaxy A55;Branislav Kollár;Montáž a servis;01.10.2024;01.10.2026;V používaní
+VEN-IT-0048;Mobil;Samsung;Galaxy A55;Juraj Holec;Montáž a servis;03.06.2024;03.06.2026;V používaní
+VEN-IT-0049;Mobil;Samsung;Galaxy A55;Juraj Holec;Montáž a servis;25.06.2022;25.06.2024;V používaní
+VEN-IT-0050;Notebook;Dell;Latitude 5440;Simona Kubišová;Obchod;31.12.2025;31.12.2028;V používaní
+VEN-IT-0051;Notebook;Dell;Latitude 5440;Juraj Holec;Montáž a servis;28.12.2025;28.12.2028;V používaní
+VEN-IT-0052;Notebook;Lenovo;ThinkPad T14;Juraj Holec;Montáž a servis;11.10.2023;11.10.2026;V používaní
+VEN-IT-0053;Notebook;Lenovo;ThinkPad T14;Filip Danko;Projekty;29.06.2024;29.06.2027;V používaní
+VEN-IT-0054;Notebook;Dell;Latitude 5440;Tomáš Šimko;Obchod;28.06.2022;28.06.2025;V používaní
+VEN-IT-0055;Monitor;Dell;P2723;Lukáš Pavlík;Montáž a servis;15.11.2024;15.11.2027;V používaní
+VEN-IT-0056;Notebook;Lenovo;ThinkPad T14;Zuzana Lipková;Financie;09.02.2025;09.02.2028;V používaní
+VEN-IT-0057;Mobil;Samsung;Galaxy A55;Eva Hrušková;Financie;28.02.2024;28.02.2026;V používaní
+VEN-IT-0058;Monitor;Dell;P2723;Natália Jurčová;Montáž a servis;23.06.2022;23.06.2025;V používaní
+VEN-IT-0059;Mobil;Samsung;Galaxy A55;Simona Kubišová;Obchod;17.03.2025;17.03.2027;V používaní
+VEN-IT-0060;Mobil;Samsung;Galaxy A55;Martina Ondrejková;Obchod;12.10.2022;12.10.2024;V používaní
+VEN-IT-0061;Notebook;Dell;Latitude 5440;Tomáš Šimko;Obchod;10.05.2022;10.05.2025;V používaní
+VEN-IT-0062;Notebook;Dell;Latitude 5440;Filip Danko;Projekty;18.09.2024;18.09.2027;V používaní
+VEN-IT-0063;Monitor;Dell;P2723;Simona Kubišová;Obchod;16.01.2026;16.01.2029;V používaní
+VEN-IT-0064;Mobil;Samsung;Galaxy A55;Rastislav Bednár;Obchod;26.07.2024;26.07.2026;V používaní
+VEN-IT-0065;Notebook;Dell;Latitude 5440;Juraj Holec;Montáž a servis;12.11.2023;12.11.2026;V používaní
+VEN-IT-0066;Monitor;Dell;P2723;Eva Hrušková;Financie;20.06.2024;20.06.2027;V používaní
+VEN-IT-0067;Tablet;Samsung;Galaxy Tab S9;Andrea Mináriková;Montáž a servis;02.05.2025;02.05.2027;V používaní
+VEN-IT-0068;Notebook;Dell;Latitude 5440;Veronika Kmeťová;Montáž a servis;16.02.2023;16.02.2026;V používaní
+VEN-IT-0069;Notebook;Lenovo;ThinkPad T14;Juraj Holec;Montáž a servis;16.10.2023;16.10.2026;V používaní
+VEN-IT-0070;Mobil;Apple;iPhone 15;Marek Holub;Vedenie;25.03.2025;25.03.2027;V používaní
+VEN-IT-0071;Notebook;Dell;Latitude 5440;Jana Mikulová;Projekty;29.05.2026;29.05.2029;V používaní
+VEN-IT-0072;Notebook;Lenovo;ThinkPad T14;Monika Ferencová;Montáž a servis;14.02.2023;14.02.2026;V používaní
+VEN-IT-0073;Mobil;Samsung;Galaxy A55;Patrik Uhrín;Montáž a servis;22.04.2026;22.04.2028;V používaní
+VEN-IT-0074;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Branislav Kollár;Montáž a servis;21.12.2025;21.12.2028;V používaní
+VEN-IT-0075;Tlačiareň;HP;LaserJet M428;Veronika Kmeťová;Montáž a servis;22.05.2022;22.05.2025;V používaní
+VEN-IT-0076;Tlačiareň;HP;LaserJet M428;Ondrej Vrábel;Montáž a servis;10.10.2025;10.10.2028;V používaní
+VEN-IT-0077;Mobil;Samsung;Galaxy A55;Simona Kubišová;Obchod;02.06.2023;02.06.2025;V používaní
+VEN-IT-0078;Mobil;Apple;iPhone 15;Juraj Holec;Montáž a servis;01.06.2022;01.06.2024;V používaní
+VEN-IT-0079;Mobil;Samsung;Galaxy A55;Monika Ferencová;Montáž a servis;31.03.2024;31.03.2026;V používaní
+VEN-IT-0080;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Veronika Kmeťová;Montáž a servis;06.05.2024;06.05.2027;V používaní
+VEN-IT-0081;Tlačiareň;HP;LaserJet M428;;;07.12.2025;07.12.2028;Vyradené
+VEN-IT-0082;Mobil;Samsung;Galaxy A55;Andrea Mináriková;Montáž a servis;24.06.2022;24.06.2024;V používaní
+VEN-IT-0083;Notebook;Dell;Latitude 5440;Patrik Uhrín;Montáž a servis;29.12.2023;29.12.2026;V používaní
+VEN-IT-0084;Mobil;Samsung;Galaxy A55;Monika Ferencová;Montáž a servis;14.08.2025;14.08.2027;V používaní
+VEN-IT-0085;Monitor;Dell;P2723;;;11.11.2023;11.11.2026;Na sklade
+VEN-IT-0086;Monitor;Dell;P2723;Lucia Kováčová;HR;21.07.2022;21.07.2025;V používaní
+VEN-IT-0087;Monitor;Dell;P2723;Katarína Sládková;Montáž a servis;16.02.2025;16.02.2028;V používaní
+VEN-IT-0088;Mobil;Samsung;Galaxy A55;Branislav Kollár;Montáž a servis;06.02.2024;06.02.2026;V používaní
+VEN-IT-0089;Mobil;Apple;iPhone 15;Monika Ferencová;Montáž a servis;15.11.2025;15.11.2027;V používaní
+VEN-IT-0090;Monitor;Dell;P2723;Lucia Kováčová;HR;15.09.2024;15.09.2027;V používaní
+VEN-IT-0091;Monitor;Dell;P2723;Peter Baláž;IT;26.08.2022;26.08.2025;V používaní
+VEN-IT-0092;Mobil;Apple;iPhone 15;Zuzana Lipková;Financie;01.10.2023;01.10.2025;V používaní
+VEN-IT-0093;Tlačiareň;HP;LaserJet M428;Katarína Sládková;Montáž a servis;16.09.2024;16.09.2027;V používaní
+VEN-IT-0094;Notebook;Lenovo;ThinkPad T14;Samuel Hraško;Montáž a servis;27.11.2025;27.11.2028;V používaní
+VEN-IT-0095;Notebook;Lenovo;ThinkPad T14;Ivana Pšenková;HR;26.12.2025;26.12.2028;V používaní
+VEN-IT-0096;Tablet;Samsung;Galaxy Tab S9;Andrea Mináriková;Montáž a servis;12.08.2022;12.08.2024;V používaní
+VEN-IT-0097;Notebook;Lenovo;ThinkPad T14;Samuel Hraško;Montáž a servis;15.05.2023;15.05.2026;V používaní
+VEN-IT-0098;Mobil;Samsung;Galaxy A55;Eva Hrušková;Financie;20.02.2025;20.02.2027;V používaní
+VEN-IT-0099;Monitor;Dell;P2723;Juraj Holec;Montáž a servis;13.07.2025;13.07.2028;V používaní
+VEN-IT-0100;Mobil;Samsung;Galaxy A55;Ondrej Vrábel;Montáž a servis;21.03.2024;21.03.2026;V používaní
+VEN-IT-0101;Mobil;Samsung;Galaxy A55;Rastislav Bednár;Obchod;09.07.2024;09.07.2026;V používaní
+VEN-IT-0102;Monitor;Dell;P2723;Veronika Kmeťová;Montáž a servis;16.03.2023;16.03.2026;V používaní
+VEN-IT-0103;Mobil;Apple;iPhone 15;Peter Baláž;IT;28.03.2025;28.03.2027;V používaní
+VEN-IT-0104;Tablet;Samsung;Galaxy Tab S9;Martina Ondrejková;Obchod;20.01.2024;20.01.2026;V používaní
+VEN-IT-0105;Monitor;Dell;P2723;Jana Mikulová;Projekty;05.10.2025;05.10.2028;V oprave
+VEN-IT-0106;Monitor;Dell;P2723;Andrea Mináriková;Montáž a servis;04.10.2023;04.10.2026;V používaní
+VEN-IT-0107;Mobil;Samsung;Galaxy A55;Monika Ferencová;Montáž a servis;22.08.2022;22.08.2024;V používaní
+VEN-IT-0108;Tablet;Samsung;Galaxy Tab S9;Dávid Koreň;Montáž a servis;20.12.2022;20.12.2024;V používaní
+VEN-IT-0109;Mobil;Apple;iPhone 15;Filip Danko;Projekty;12.06.2025;12.06.2027;V používaní
+VEN-IT-0110;Mobil;Samsung;Galaxy A55;Eva Hrušková;Financie;30.08.2022;30.08.2024;V používaní
+VEN-IT-0111;Notebook;Lenovo;ThinkPad T14;Zuzana Lipková;Financie;21.11.2025;21.11.2028;V používaní
+VEN-IT-0112;Monitor;Dell;P2723;Dávid Koreň;Montáž a servis;10.10.2022;10.10.2025;V používaní
+VEN-IT-0113;Monitor;Dell;P2723;Marek Holub;Vedenie;25.07.2025;25.07.2028;V používaní
+VEN-IT-0114;Dokovacia stanica;Lenovo;USB-C Dock Gen 2;Martina Ondrejková;Obchod;10.02.2025;10.02.2028;V používaní
+VEN-IT-0115;Notebook;Dell;Latitude 5440;Martina Ondrejková;Obchod;07.10.2023;07.10.2026;V používaní
+VEN-IT-0116;Mobil;Samsung;Galaxy A55;Zuzana Lipková;Financie;20.01.2022;20.01.2024;V používaní
+VEN-IT-0117;Notebook;Dell;Latitude 5440;Juraj Holec;Montáž a servis;24.02.2025;24.02.2028;V používaní
+VEN-IT-0118;Monitor;Dell;P2723;Patrik Uhrín;Montáž a servis;04.10.2024;04.10.2027;V používaní
+VEN-IT-0119;Tablet;Samsung;Galaxy Tab S9;Marek Holub;Vedenie;09.12.2022;09.12.2024;V používaní
+VEN-IT-0120;Notebook;Lenovo;ThinkPad T14;Natália Jurčová;Montáž a servis;28.03.2023;28.03.2026;V používaní
+VEN-IT-0121;Notebook;Dell;Latitude 5440;Lukáš Pavlík;Montáž a servis;15.08.2023;15.08.2026;V používaní
+VEN-IT-0122;Monitor;Dell;P2723;Samuel Hraško;Montáž a servis;02.05.2026;02.05.2029;V používaní
+VEN-IT-0123;Mobil;Samsung;Galaxy A55;Michal Gažo;IT;18.03.2025;18.03.2027;V používaní
+VEN-IT-0124;Mobil;Apple;iPhone 15;Zuzana Lipková;Financie;15.01.2025;15.01.2027;V používaní
