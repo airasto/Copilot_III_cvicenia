@@ -141,7 +141,7 @@ const MODULY=[
  {n:1,nazov:"Agentný svet",popis:"Rozdiel medzi chatom a agentom, predpripravení agenti a výber úlohy, pre ktorú sa oplatí postaviť vlastného agenta."},
  {n:2,nazov:"Agent Builder I",popis:"Prvý vlastný agent od nuly: inštrukcie, zdroj znalostí, konverzačné štartéry a testovanie."},
  {n:3,nazov:"Agent Builder II",popis:"Agenti pre konkrétne firemné scenáre, druhý zdroj znalostí, test kolegom a správa verzií."},
- {n:4,nazov:"Workflows a App Builder",kratko:"Workflows a App Builder",popis:"Automatizácia procesov opísaných slovami a mini-aplikácie nad firemnými dátami."},
+ {n:4,nazov:"Workflows a App Builder",kratko:"Workflows a App Builder",popis:"Automatizácia procesov opísaných slovami a mini-aplikácie nad firemnými dátami. Prompty pre Workflows rešpektujú jeho aktuálne možnosti: workflow sa spúšťa ručne, podľa plánu alebo e-mailom a kroky idú za sebou bez vetvenia."},
  {n:5,nazov:"Governance a bezpečnosť",kratko:"Governance",popis:"Čo agent vidí, EU AI Act, kontrola pred nasadením a spustenie agenta vo firme."}
 ];
 const PROMPTY=[
@@ -386,46 +386,48 @@ Nové inštrukcie:
  tip:"Záznam zmien sa oplatí viesť od prvej verzie. Keď agent začne odpovedať inak, budete vedieť prečo.",
  podklad:["10_Karta_agenta.docx"]},
 // ---------- MODUL 4 ----------
-{id:"4.1",m:4,kat:"Workflows",nazov:"Schvaľovanie žiadostí",jadro:true,nastroj:"Workflows",
- ako:["V Copilot Chate otvorte agenta Workflows.","Vložte prompt a prejdite navrhnuté kroky.","Pred spustením upravte podmienky a otestujte na jednej vzorovej žiadosti."],
- prompt:`Keď niekto pridá novú položku do zoznamu Žiadosti o nákup, skontroluj sumu.
+{id:"4.1",m:4,kat:"Workflows",nazov:"Schvaľovanie žiadosti o nákup",jadro:true,nastroj:"Workflows",
+ ako:["V SharePointe si pripravte zoznam: Obsah lokality → Nový → Zoznam → Prázdny zoznam s názvom Ziadosti o nakup (bez diakritiky, premenovať ho môžete neskôr). Pridajte stĺpce Suma (typ Číslo) a Stav (typ Voľba s možnosťami Schválená a Zamietnutá).","Adresu lokality (napr. https://firma.sharepoint.com/sites/tim) vpíšte hore do poľa Adresa vašej SharePoint lokality.","Otvorte Copilot → Agenti → Workflows a vložte prompt.","V návrhári skontrolujte poradie krokov: nový e-mail → Copilot → schválenie → SharePoint → Outlook. Kliknite na Uložiť.","Pošlite si e-mail s predmetom Žiadosť o nákup a textom Potrebujem nový notebook za 1200 €. Požiadavku schváľte v Outlooku alebo v Teams (aplikácia Schválenia) a skontrolujte zoznam aj poštu."],
+ prompt:`Keď mi príde e-mail, ktorý má v predmete „Žiadosť o nákup“, zisti z textu e-mailu, čo sa kupuje a akú to má sumu v eurách.
 
-Ak je suma vyššia ako 500 €, pošli žiadosť na schválenie vedúcemu oddelenia, ktorý je uvedený v žiadosti. Ak je suma 500 € alebo nižšia, označ žiadosť ako schválenú automaticky.
+Pošli žiadosť na schválenie na moju e-mailovú adresu. V schvaľovaní uveď odosielateľa, čo sa kupuje a sumu.
 
-Po rozhodnutí pošli žiadateľovi e-mail s výsledkom a zapíš stav do stĺpca Stav.`,
- tip:"Prepíšte na svoj schvaľovací proces: dovolenka, služobná cesta, školenie, objednávka materiálu.",
+Po rozhodnutí pridaj novú položku do zoznamu „Ziadosti o nakup“ na lokalite {lokalita}: Nadpis = čo sa kupuje, Suma = suma, Stav = „Schválená“, ak je výsledok Approve, alebo „Zamietnutá“, ak je výsledok Reject.
+
+Potom pošli odosielateľovi e-mail s predmetom „Rozhodnutie o nákupe“, v ktorom uvedieš výsledok, čo sa kupuje a sumu.`,
+ tip:"Prepíšte na svoj schvaľovací proces: dovolenka, služobná cesta, školenie. Predmet e-mailu s výsledkom nesmie obsahovať text zo spúšťača, inak sa workflow spustí znova. Workflows zatiaľ nevie rozhodovať typu ak – inak (napríklad schvaľovať len sumy nad 500 €), na to slúži Power Automate.",
  bez:"Ak Workflows nemáte, použite cvičenie 4.4 a výsledok si uložte na neskôr.",
- podklad:["12_ventoria_ziadosti.xlsx"]},
-{id:"4.2",m:4,kat:"Workflows",nazov:"Piatkový prehľad",jadro:false,nastroj:"Workflows",
- ako:["Otvorte agenta Workflows a vložte prompt.","Na test zmeňte čas na najbližších pár minút a prehľad pošlite sebe."],
- prompt:`Každý piatok o 14.00 h zostav súhrn nových objednávok za posledných 7 dní zo zoznamu Objednávky.
+ podklad:null},
+{id:"4.2",m:4,kat:"Workflows",nazov:"Piatkový prehľad žiadostí",jadro:false,nastroj:"Workflows",
+ ako:["Predpoklad: zoznam zo cvičenia 4.1 s aspoň dvomi položkami.","Otvorte Workflows a vložte prompt.","V návrhári skontrolujte kroky: plán (Recurrence) → načítanie položiek zo SharePointu → Copilot → Outlook. Kliknite na Uložiť.","Na piatok nečakajte: použite Skúšobné spustenie vpravo hore a skontrolujte poštu."],
+ prompt:`Každý piatok o 14.00 načítaj položky zo zoznamu „Ziadosti o nakup“ na lokalite {lokalita}.
 
-Súhrn má obsahovať: počet objednávok, celkovú sumu, 3 najväčšie objednávky a porovnanie s predchádzajúcim týždňom.
+Pomocou Copilota z nich priprav súhrn za posledných 7 dní: počet žiadostí, celkovú sumu, počet schválených a zamietnutých žiadostí a 3 najväčšie žiadosti. Položky staršie ako 7 dní nezapočítavaj.
 
-Pošli ho e-mailom na moju adresu s predmetom „Týždenný prehľad objednávok“.`,
- tip:"Funguje pre akýkoľvek pravidelný prehľad: nové žiadosti, otvorené tikety, úlohy po termíne.",
- bez:"Bez Workflows: rovnaký súhrn vypýtajte od Copilota v Exceli nad súborom s dátami.",
- podklad:["11_ventoria_objednavky.xlsx"]},
-{id:"4.3",m:4,kat:"Workflows",nazov:"E-mail → úloha → Teams",jadro:false,nastroj:"Workflows",
- ako:["Otvorte agenta Workflows a vložte prompt.","Upravte názov plánu a kanála podľa svojho Teams.","Otestujte tak, že si pošlete e-mail s predmetom Objednávka."],
- prompt:`Keď mi príde e-mail, ktorý má v predmete slovo „Objednávka“, vytvor úlohu v Planneri v pláne Obchod.
+Súhrn mi pošli e-mailom s predmetom „Týždenný prehľad žiadostí o nákup“.`,
+ tip:"Copilot spracuje všetky položky naraz, preto netreba opakovať krok pre každú položku. Rovnako si postavíte prehľad otvorených reklamácií, nových dopytov alebo úloh po termíne.",
+ bez:"Bez Workflows: otvorte zoznam v SharePointe, kliknite na Copilot a vypýtajte si rovnaký súhrn.",
+ podklad:null},
+{id:"4.3",m:4,kat:"Workflows",nazov:"E-mail → zhrnutie v Teams → potvrdenie",jadro:false,nastroj:"Workflows",
+ ako:["Otvorte Workflows a vložte prompt.","V návrhári skontrolujte kroky: nový e-mail → Copilot → Teams → Outlook. Kliknite na Uložiť.","Pošlite si e-mail s predmetom Objednávka a textom Dobrý deň, objednávame 3 ks rekuperačnej jednotky REKU 400 s dodaním do 15. 11. Ján Novák, Hotel Panoráma.","Skontrolujte správu v Teams (príde od aplikácie Workflows) a potvrdzujúci e-mail."],
+ prompt:`Keď mi príde e-mail, ktorý má v predmete „Objednávka“, pomocou Copilota z neho zisti, kto objednáva, čo, v akom množstve a do kedy to potrebuje.
 
-Názov úlohy bude predmet e-mailu, do popisu daj meno odosielateľa a stručné zhrnutie e-mailu. Termín nastav na 2 pracovné dni.
+Pošli mi v Teams správu so zhrnutím objednávky a s menom odosielateľa.
 
-Potom pošli do kanála Obchod v Teams krátku správu, že prišla nová objednávka, s odkazom na úlohu.`,
- tip:"Zmeňte kľúčové slovo a cieľ: reklamácia → servisný tím, faktúra → účtáreň, životopis → HR.",
- bez:"Bez Workflows: použite cvičenie 4.4.",
+Odosielateľovi pošli e-mail s predmetom „Potvrdenie prijatia“, že sme jeho požiadavku prijali a ozveme sa do 2 pracovných dní.`,
+ tip:"Zmeňte kľúčové slovo a obsah: Reklamácia → zhrnutie pre servis, Faktúra → zhrnutie pre účtáreň, Životopis → zhrnutie pre HR. Ak máte tím v Teams, správu môžete poslať do kanála. Úlohu v Planneri pridajte ako rozšírenie, ak ju agent ponúkne.",
+ bez:"Bez Workflows: v Outlooku otvorte e-mail a dajte si ho zhrnúť Copilotom.",
  podklad:null},
 {id:"4.4",m:4,kat:"Workflows",nazov:"Rozložte svoj proces",jadro:true,nastroj:"Copilot Chat",
  ako:["Vložte prompt do Copilot Chatu.","Odstavec z konca výstupu môžete vložiť do agenta Workflows."],
  prompt:`Chcem zautomatizovať tento proces: {proces}.
 
-Rozlož ho v prostredí Microsoft 365 (Outlook, Teams, SharePoint, Planner, Approvals) na:
-1. spúšťač (trigger),
-2. podmienky,
-3. akcie.
+Navrhni ho pre agenta Workflows v Microsoft 365 Copilote a rešpektuj jeho obmedzenia:
+– spúšťač môže byť len ručný, plánovaný, nový e-mail alebo zmena v kalendári (nie nová položka v SharePoint zozname),
+– kroky idú za sebou, workflow nevie vetviť typu ak – inak ani opakovať krok pre každú položku,
+– k dispozícii sú Outlook, Teams, SharePoint (pridať a načítať položky), Planner, schvaľovanie a krok s Copilotom, ktorý spracuje text alebo viac položiek naraz.
 
-Uveď aj: aké dáta proces potrebuje a kde majú byť uložené, čo sa môže pokaziť a ako automatizáciu otestovať na vzorke.
+Uveď spúšťač, kroky v poradí, aké dáta proces potrebuje a kde sú uložené, čo sa môže pokaziť a ako to otestovať. Ak proces potrebuje rozhodovanie ak – inak, navrhni zjednodušenie alebo napíš, že patrí do Power Automate.
 
 Na záver napíš jeden odstavec, ktorý môžem vložiť priamo do agenta Workflows.`,
  tip:"Vyberte proces, ktorý je stabilný a robíte ho aspoň raz týždenne. Automatizujte proces, ktorý už funguje.",
@@ -452,7 +454,7 @@ Zobraz:
 – zoznam žiadostí, ktoré čakajú na schválenie dlhšie ako 5 dní.
 
 Pridaj formulár na zadanie novej žiadosti s poliami: žiadateľ, oddelenie, položka, kategória, suma a schvaľovateľ.`,
- tip:"Dobre sa kombinuje s workflow zo cvičenia 4.1: aplikácia eviduje, workflow schvaľuje.",
+ tip:"Dobre sa kombinuje so cvičením 4.1: workflow zapisuje rozhodnuté žiadosti do zoznamu, aplikácia z nich robí prehľad.",
  bez:"Bez App Buildera: priložte súbor do Copilot Chatu a nechajte si navrhnúť štruktúru zoznamu a prehľadu.",
  podklad:["12_ventoria_ziadosti.xlsx"]},
 {id:"4.7",m:4,kat:"App Builder a SharePoint",nazov:"Tímová stránka projektu",jadro:false,nastroj:"SharePoint",
@@ -472,7 +474,7 @@ Na stránke chcem:
  prompt:`Navrhni mini-systém z troch častí pre tento proces: {proces}.
 
 1. Agent: na aké otázky odpovedá a z akého zdroja.
-2. Workflow: spúšťač, podmienky a akcie.
+2. Workflow pre agenta Workflows: spúšťač môže byť len ručný, plánovaný, nový e-mail alebo zmena v kalendári; kroky idú za sebou bez vetvenia ak – inak a bez opakovania pre každú položku.
 3. Aplikácia: aké polia eviduje a aký prehľad zobrazuje.
 
 Opíš, ako na seba časti nadväzujú. Pre každú časť napíš hotový prompt, ktorým ju vytvorím.`,
@@ -583,7 +585,8 @@ const PODKLADY=[
 const POLIA=[
  ["rola","Vaša pozícia"],["oddelenie","Oddelenie"],["firma","Firma"],["odvetvie","Odvetvie"],
  ["uloha","Opakovaná úloha, ktorú by mohol riešiť agent","full"],["proces","Proces, ktorý chcete automatizovať","full"],
- ["zdroj","Dokument, z ktorého bude agent čerpať"],["kontakt","Kontakt, keď agent nevie odpovedať"]];
+ ["zdroj","Dokument, z ktorého bude agent čerpať"],["kontakt","Kontakt, keď agent nevie odpovedať"],
+ ["lokalita","Adresa vašej SharePoint lokality (pre modul 4)","full","https://firma.sharepoint.com/sites/nazov-lokality"]];
 const SPOL={firma:"Ventoria s. r. o.",odvetvie:"vzduchotechnika a rekuperácia"};
 const PRESETY={
  "HR":{rola:"HR špecialistka",oddelenie:"HR",uloha:"odpovedanie novým kolegom na otázky o benefitoch, dochádzke a dovolenke",proces:"schvaľovanie žiadostí o nákup",zdroj:"Príručka zamestnanca",kontakt:"hr@ventoria.sk"},
@@ -605,9 +608,9 @@ function renderPresety(){const el=document.getElementById("presets");el.innerHTM
  const v=document.createElement("button");v.type="button";v.textContent="Vlastná";v.setAttribute("aria-pressed",aktivny==="");
  v.onclick=()=>{aktivny="";POLIA.forEach(([k])=>ctx[k]="");renderPolia();renderPresety();prekresli();uloz();document.getElementById("f-rola").focus();};el.appendChild(v);}
 function renderPolia(){const el=document.getElementById("fields");el.innerHTML="";
- POLIA.forEach(([k,l,c])=>{const d=document.createElement("div");if(c)d.className=c;
+ POLIA.forEach(([k,l,c,ph])=>{const d=document.createElement("div");if(c)d.className=c;
   d.innerHTML='<label for="f-'+k+'">'+l+'</label><input id="f-'+k+'" autocomplete="off">';
-  const i=d.querySelector("input");i.value=ctx[k]||"";i.oninput=()=>{ctx[k]=i.value;if(aktivny){aktivny="";renderPresety();}prekresli();uloz();};el.appendChild(d);});}
+  const i=d.querySelector("input");if(ph)i.placeholder=ph;i.value=ctx[k]||"";i.oninput=()=>{ctx[k]=i.value;if(aktivny){aktivny="";renderPresety();}prekresli();uloz();};el.appendChild(d);});}
 function prekresli(){document.querySelectorAll("pre[data-id]").forEach(p=>{const pr=PROMPTY.find(x=>x.id===p.dataset.id);p.innerHTML=html(pr.prompt);});}
 function renderObsah(){const nav=document.getElementById("nav"),ob=document.getElementById("obsah");
  MODULY.forEach(m=>{nav.insertAdjacentHTML("beforeend",'<a href="#modul-'+m.n+'"><b>'+m.n+'</b>'+(m.kratko||m.nazov)+'</a>');
