@@ -387,7 +387,7 @@ Nové inštrukcie:
  podklad:["10_Karta_agenta.docx"]},
 // ---------- MODUL 4 ----------
 {id:"4.1",m:4,kat:"Workflows",nazov:"Schvaľovanie žiadosti o nákup",jadro:true,nastroj:"Workflows",
- ako:["V SharePointe si pripravte zoznam: Obsah lokality → Nový → Zoznam → Prázdny zoznam s názvom Ziadosti o nakup (bez diakritiky, premenovať ho môžete neskôr). Pridajte stĺpce Suma (typ Číslo) a Stav (typ Voľba s možnosťami Schválená a Zamietnutá).","Adresu lokality (napr. https://firma.sharepoint.com/sites/tim) vpíšte hore do poľa Adresa vašej SharePoint lokality.","Otvorte Copilot → Agenti → Workflows a vložte prompt.","V návrhári skontrolujte poradie krokov: nový e-mail → Copilot → schválenie → SharePoint → Outlook. Kliknite na Uložiť.","Pošlite si e-mail s predmetom Žiadosť o nákup a textom Potrebujem nový notebook za 1200 €. Požiadavku schváľte v Outlooku alebo v Teams (aplikácia Schválenia) a skontrolujte zoznam aj poštu."],
+ ako:["V SharePointe si pripravte zoznam: Obsah lokality → Nový → Zoznam → Prázdny zoznam s názvom Ziadosti o nakup. Názov píšte bez diakritiky a neskôr ho nepremenovávajte, inak workflow zoznam nenájde. Pridajte stĺpce Suma (typ Číslo) a Stav (typ Voľba s možnosťami Schválená a Zamietnutá), tiež bez diakritiky v názve.","Adresu lokality (napr. https://firma.sharepoint.com/sites/tim) vpíšte hore do poľa Adresa vašej SharePoint lokality.","Otvorte Copilot → Agenti → Workflows a vložte prompt.","V návrhári skontrolujte poradie krokov: nový e-mail → Copilot → schválenie → SharePoint → Outlook. Kliknite na Uložiť.","Pošlite si e-mail s predmetom Žiadosť o nákup a textom Potrebujem nový notebook za 1200 €. Požiadavku schváľte v Outlooku alebo v Teams (aplikácia Schválenia) a skontrolujte zoznam aj poštu."],
  prompt:`Keď mi príde e-mail, ktorý má v predmete „Žiadosť o nákup“, zisti z textu e-mailu, čo sa kupuje a akú to má sumu v eurách.
 
 Pošli žiadosť na schválenie na moju e-mailovú adresu. V schvaľovaní uveď odosielateľa, čo sa kupuje a sumu.
@@ -399,22 +399,26 @@ Potom pošli odosielateľovi e-mail s predmetom „Rozhodnutie o nákupe“, v k
  bez:"Ak Workflows nemáte, použite cvičenie 4.4 a výsledok si uložte na neskôr.",
  podklad:null},
 {id:"4.2",m:4,kat:"Workflows",nazov:"Piatkový prehľad žiadostí",jadro:false,nastroj:"Workflows",
- ako:["Predpoklad: zoznam zo cvičenia 4.1 s aspoň dvomi položkami.","Otvorte Workflows a vložte prompt.","V návrhári skontrolujte kroky: plán (Recurrence) → načítanie položiek zo SharePointu → Copilot → Outlook. Kliknite na Uložiť.","Na piatok nečakajte: použite Skúšobné spustenie vpravo hore a skontrolujte poštu."],
- prompt:`Každý piatok o 14.00 načítaj položky zo zoznamu „Ziadosti o nakup“ na lokalite {lokalita}.
+ ako:["Predpoklad: zoznam zo cvičenia 4.1 s aspoň dvomi položkami.","Otvorte Workflows a vložte prompt celý naraz.","V návrhári skontrolujte štyri kroky: plán (Recurrence) → SharePoint → Copilot → Outlook. Kliknite na Uložiť.","Na piatok nečakajte: kliknite na Otestovať vpravo hore a skontrolujte poštu.","Ak workflow po viacerých úpravách prestane fungovať, začnite nový a vložte prompt znova celý naraz."],
+ prompt:`Každý piatok o 14.00 spusti tieto kroky:
 
-Pomocou Copilota z nich priprav súhrn za posledných 7 dní: počet žiadostí, celkovú sumu, počet schválených a zamietnutých žiadostí a 3 najväčšie žiadosti. Položky staršie ako 7 dní nezapočítavaj.
+1. SharePoint – Získať položky zo zoznamu „Ziadosti o nakup“ na lokalite {lokalita}. Interné názvy stĺpcov: Title, Suma, Stav, Created.
 
-Súhrn mi pošli e-mailom s predmetom „Týždenný prehľad žiadostí o nákup“.`,
- tip:"Copilot spracuje všetky položky naraz, preto netreba opakovať krok pre každú položku. Rovnako si postavíte prehľad otvorených reklamácií, nových dopytov alebo úloh po termíne.",
+2. Copilot – z výstupu kroku 1 napíš súhrn žiadostí vytvorených za posledných 7 dní: počet žiadostí, celková suma v eurách, počet schválených a zamietnutých a 3 najväčšie žiadosti s názvom, sumou a stavom. Výstup je obyčajný text v slovenčine, nie JSON a nie HTML.
+
+3. Outlook – pošli mi e-mail s predmetom „Týždenný prehľad žiadostí o nákup“. Telo e-mailu vytvor zo súhrnu z kroku 2 a naformátuj ho prehľadne: nadpis, odrážky a tabuľka 3 najväčších žiadostí.`,
+ tip:"Copilot spracuje všetky položky naraz, preto netreba opakovať krok pre každú položku. Stĺpce Nadpis a Vytvorené majú v SharePointe interné názvy Title a Created, preto sú v prompte po anglicky. Rovnako si postavíte prehľad otvorených reklamácií, nových dopytov alebo úloh po termíne.",
  bez:"Bez Workflows: otvorte zoznam v SharePointe, kliknite na Copilot a vypýtajte si rovnaký súhrn.",
  podklad:null},
 {id:"4.3",m:4,kat:"Workflows",nazov:"E-mail → zhrnutie v Teams → potvrdenie",jadro:false,nastroj:"Workflows",
  ako:["Otvorte Workflows a vložte prompt.","V návrhári skontrolujte kroky: nový e-mail → Copilot → Teams → Outlook. Kliknite na Uložiť.","Pošlite si e-mail s predmetom Objednávka a textom Dobrý deň, objednávame 3 ks rekuperačnej jednotky REKU 400 s dodaním do 15. 11. Ján Novák, Hotel Panoráma.","Skontrolujte správu v Teams (príde od aplikácie Workflows) a potvrdzujúci e-mail."],
- prompt:`Keď mi príde e-mail, ktorý má v predmete „Objednávka“, pomocou Copilota z neho zisti, kto objednáva, čo, v akom množstve a do kedy to potrebuje.
+ prompt:`Keď mi príde e-mail, ktorý má v predmete „Objednávka“, spusti tieto kroky:
 
-Pošli mi v Teams správu so zhrnutím objednávky a s menom odosielateľa.
+1. Copilot – z textu e-mailu zisti, kto objednáva, čo, v akom množstve a do kedy to potrebuje. Výstup je obyčajný text v slovenčine, nie JSON.
 
-Odosielateľovi pošli e-mail s predmetom „Potvrdenie prijatia“, že sme jeho požiadavku prijali a ozveme sa do 2 pracovných dní.`,
+2. Teams – pošli mi správu so zhrnutím z kroku 1 a s menom odosielateľa.
+
+3. Outlook – pošli odosielateľovi e-mail s predmetom „Potvrdenie prijatia“, že sme jeho požiadavku prijali a ozveme sa do 2 pracovných dní.`,
  tip:"Zmeňte kľúčové slovo a obsah: Reklamácia → zhrnutie pre servis, Faktúra → zhrnutie pre účtáreň, Životopis → zhrnutie pre HR. Ak máte tím v Teams, správu môžete poslať do kanála. Úlohu v Planneri pridajte ako rozšírenie, ak ju agent ponúkne.",
  bez:"Bez Workflows: v Outlooku otvorte e-mail a dajte si ho zhrnúť Copilotom.",
  podklad:null},
@@ -425,11 +429,12 @@ Odosielateľovi pošli e-mail s predmetom „Potvrdenie prijatia“, že sme jeh
 Navrhni ho pre agenta Workflows v Microsoft 365 Copilote a rešpektuj jeho obmedzenia:
 – spúšťač môže byť len ručný, plánovaný, nový e-mail alebo zmena v kalendári (nie nová položka v SharePoint zozname),
 – kroky idú za sebou, workflow nevie vetviť typu ak – inak ani opakovať krok pre každú položku,
-– k dispozícii sú Outlook, Teams, SharePoint (pridať a načítať položky), Planner, schvaľovanie a krok s Copilotom, ktorý spracuje text alebo viac položiek naraz.
+– k dispozícii sú Outlook, Teams, SharePoint (pridať a načítať položky), Planner, schvaľovanie a krok s Copilotom, ktorý spracuje text alebo viac položiek naraz,
+– Copilot nevie sám čítať SharePoint, dáta mu musí dodať predchádzajúci krok, a jeho výstup má byť obyčajný text.
 
 Uveď spúšťač, kroky v poradí, aké dáta proces potrebuje a kde sú uložené, čo sa môže pokaziť a ako to otestovať. Ak proces potrebuje rozhodovanie ak – inak, navrhni zjednodušenie alebo napíš, že patrí do Power Automate.
 
-Na záver napíš jeden odstavec, ktorý môžem vložiť priamo do agenta Workflows.`,
+Na záver napíš prompt pre agenta Workflows v tvare: spúšťač a pod ním očíslované kroky, pri každom kroku názov aplikácie (napr. „1. SharePoint – …“).`,
  tip:"Vyberte proces, ktorý je stabilný a robíte ho aspoň raz týždenne. Automatizujte proces, ktorý už funguje.",
  podklad:null},
 {id:"4.5",m:4,kat:"App Builder a SharePoint",nazov:"Evidencia IT zariadení",jadro:true,nastroj:"App Builder",
@@ -474,7 +479,7 @@ Na stránke chcem:
  prompt:`Navrhni mini-systém z troch častí pre tento proces: {proces}.
 
 1. Agent: na aké otázky odpovedá a z akého zdroja.
-2. Workflow pre agenta Workflows: spúšťač môže byť len ručný, plánovaný, nový e-mail alebo zmena v kalendári; kroky idú za sebou bez vetvenia ak – inak a bez opakovania pre každú položku.
+2. Workflow pre agenta Workflows: spúšťač môže byť len ručný, plánovaný, nový e-mail alebo zmena v kalendári; kroky idú za sebou bez vetvenia ak – inak a bez opakovania pre každú položku; prompt napíš ako očíslované kroky s názvom aplikácie pri každom kroku.
 3. Aplikácia: aké polia eviduje a aký prehľad zobrazuje.
 
 Opíš, ako na seba časti nadväzujú. Pre každú časť napíš hotový prompt, ktorým ju vytvorím.`,
