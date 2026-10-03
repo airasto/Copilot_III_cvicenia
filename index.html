@@ -411,15 +411,15 @@ Potom pošli odosielateľovi e-mail s predmetom „Rozhodnutie o nákupe“, v k
  bez:"Bez Workflows: otvorte zoznam v SharePointe, kliknite na Copilot a vypýtajte si rovnaký súhrn.",
  podklad:null},
 {id:"4.3",m:4,kat:"Workflows",nazov:"E-mail → zhrnutie v Teams → potvrdenie",jadro:false,nastroj:"Workflows",
- ako:["Otvorte Workflows a vložte prompt.","V návrhári skontrolujte kroky: nový e-mail → Copilot → Teams → Outlook. Kliknite na Uložiť.","Pošlite si e-mail s predmetom Objednávka a textom Dobrý deň, objednávame 3 ks rekuperačnej jednotky REKU 400 s dodaním do 15. 11. Ján Novák, Hotel Panoráma.","Skontrolujte správu v Teams (príde od aplikácie Workflows) a potvrdzujúci e-mail."],
+ ako:["Otvorte Workflows a vložte prompt celý naraz.","V návrhári skontrolujte štyri kroky: nový e-mail → Copilot → Teams → Outlook. Kliknite na Uložiť.","Pošlite si e-mail s predmetom Objednávka – Hotel Panoráma a textom: Dobrý deň, objednáva Ján Novák, Hotel Panoráma Tatry: 3 ks REKU 400 a 3 ks filter set F7 vrátane montáže, dodanie do 15. 11. 2026. Ďakujem.","Skontrolujte správu v Teams (príde od aplikácie Workflows) a e-mail Potvrdenie prijatia.","Ak workflow po viacerých úpravách nejde uložiť, začnite nový a vložte prompt znova celý naraz."],
  prompt:`Keď mi príde e-mail, ktorý má v predmete „Objednávka“, spusti tieto kroky:
 
-1. Copilot – z textu e-mailu zisti, kto objednáva, čo, v akom množstve a do kedy to potrebuje. Výstup je obyčajný text v slovenčine, nie JSON.
+1. Copilot – z celého tela e-mailu zisti, kto objednáva (meno a firma), čo, v akom množstve a do kedy to potrebuje. Výstup je obyčajný text v slovenčine, nie JSON.
 
-2. Teams – pošli mi správu so zhrnutím z kroku 1 a s menom odosielateľa.
+2. Teams – pošli mi správu so zhrnutím objednávky z kroku 1.
 
-3. Outlook – pošli odosielateľovi e-mail s predmetom „Potvrdenie prijatia“, že sme jeho požiadavku prijali a ozveme sa do 2 pracovných dní.`,
- tip:"Zmeňte kľúčové slovo a obsah: Reklamácia → zhrnutie pre servis, Faktúra → zhrnutie pre účtáreň, Životopis → zhrnutie pre HR. Ak máte tím v Teams, správu môžete poslať do kanála. Úlohu v Planneri pridajte ako rozšírenie, ak ju agent ponúkne.",
+3. Outlook – pošli na moju e-mailovú adresu e-mail s predmetom „Potvrdenie prijatia“ a textom: Vaša objednávka bola prijatá. Ozveme sa do 2 pracovných dní.`,
+ tip:"Workflow spoľahlivo spracuje len začiatok e-mailu, preto majú byť dôležité údaje (kto, čo, koľko, do kedy) hneď v prvých vetách. Potvrdenie si v cvičení posielate sami: Workflows zatiaľ nevie spoľahlivo zistiť adresu odosielateľa, na odpoveď zákazníkovi treba Power Automate. Zmeňte kľúčové slovo a obsah: Reklamácia → zhrnutie pre servis, Faktúra → zhrnutie pre účtáreň.",
  bez:"Bez Workflows: v Outlooku otvorte e-mail a dajte si ho zhrnúť Copilotom.",
  podklad:null},
 {id:"4.4",m:4,kat:"Workflows",nazov:"Rozložte svoj proces",jadro:true,nastroj:"Copilot Chat",
@@ -430,7 +430,7 @@ Navrhni ho pre agenta Workflows v Microsoft 365 Copilote a rešpektuj jeho obmed
 – spúšťač môže byť len ručný, plánovaný, nový e-mail alebo zmena v kalendári (nie nová položka v SharePoint zozname),
 – kroky idú za sebou, workflow nevie vetviť typu ak – inak ani opakovať krok pre každú položku,
 – k dispozícii sú Outlook, Teams, SharePoint (pridať a načítať položky), Planner, schvaľovanie a krok s Copilotom, ktorý spracuje text alebo viac položiek naraz,
-– Copilot nevie sám čítať SharePoint, dáta mu musí dodať predchádzajúci krok, a jeho výstup má byť obyčajný text.
+– Copilot vidí len to, čo mu predchádzajúci krok odovzdá: SharePoint sám nečíta, z e-mailu spoľahlivo spracuje len začiatok textu a adresu odosielateľa nezistí; jeho výstup má byť obyčajný text.
 
 Uveď spúšťač, kroky v poradí, aké dáta proces potrebuje a kde sú uložené, čo sa môže pokaziť a ako to otestovať. Ak proces potrebuje rozhodovanie ak – inak, navrhni zjednodušenie alebo napíš, že patrí do Power Automate.
 
